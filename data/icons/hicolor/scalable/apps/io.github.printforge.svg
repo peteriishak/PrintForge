@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
+  <defs>
+    <!-- Gradients -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3584e4"/>
+      <stop offset="100%" stop-color="#1c71d8"/>
+    </linearGradient>
+    <linearGradient id="paperGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#f0f2f5"/>
+    </linearGradient>
+    <linearGradient id="printerBody" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#3d3846"/>
+      <stop offset="100%" stop-color="#241f31"/>
+    </linearGradient>
+    <linearGradient id="trayGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#5e5c64"/>
+      <stop offset="100%" stop-color="#474350"/>
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#33d17a"/>
+      <stop offset="100%" stop-color="#3584e4"/>
+    </linearGradient>
+
+    <!-- Drop Shadow Filter -->
+    <filter id="dropShadow" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#000000" flood-opacity="0.25"/>
+    </filter>
+    <filter id="subtleShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#000000" flood-opacity="0.2"/>
+    </filter>
+  </defs>
+
+  <!-- Background Base App Tile -->
+  <rect x="8" y="8" width="112" height="112" rx="28" fill="url(#bgGrad)" filter="url(#dropShadow)"/>
+
+  <!-- Top Paper Input (feeding in) -->
+  <rect x="36" y="20" width="56" height="34" rx="4" fill="url(#paperGrad)" filter="url(#subtleShadow)"/>
+  <!-- Paper subtle lines -->
+  <line x1="44" y1="28" x2="72" y2="28" stroke="#c0bfbc" stroke-width="2" stroke-linecap="round"/>
+  <line x1="44" y1="34" x2="84" y2="34" stroke="#deddda" stroke-width="2" stroke-linecap="round"/>
+  <line x1="44" y1="40" x2="78" y2="40" stroke="#deddda" stroke-width="2" stroke-linecap="round"/>
+
+  <!-- Printer Main Body -->
+  <rect x="20" y="44" width="88" height="48" rx="10" fill="url(#printerBody)" filter="url(#dropShadow)"/>
+
+  <!-- Top Highlight / Bevel -->
+  <path d="M 30 44 L 98 44 Q 108 44 108 54 L 108 55 Q 108 46 98 46 L 30 46 Q 20 46 20 55 L 20 54 Q 20 44 30 44 Z" fill="#77767b" opacity="0.3"/>
+
+  <!-- Paper Output Slot -->
+  <rect x="30" y="66" width="68" height="8" rx="3" fill="#181520"/>
+
+  <!-- Paper Output Sheet (dispensing) -->
+  <rect x="34" y="68" width="60" height="38" rx="4" fill="url(#paperGrad)" filter="url(#subtleShadow)"/>
+
+  <!-- Graphic on Output Paper (PrintForge anvil / document emblem) -->
+  <rect x="42" y="76" width="16" height="14" rx="2" fill="#3584e4" opacity="0.85"/>
+  <line x1="64" y1="78" x2="86" y2="78" stroke="#5e5c64" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="64" y1="84" x2="82" y2="84" stroke="#9a9996" stroke-width="2" stroke-linecap="round"/>
+  <line x1="42" y1="96" x2="86" y2="96" stroke="url(#accentGrad)" stroke-width="2.5" stroke-linecap="round"/>
+
+  <!-- Control Panel & Status LED -->
+  <circle cx="94" cy="54" r="3.5" fill="#33d17a" filter="url(#subtleShadow)"/>
+  <circle cx="84" cy="54" r="2" fill="#77767b"/>
+  <circle cx="76" cy="54" r="2" fill="#77767b"/>
+
+  <!-- Output Tray Lip -->
+  <rect x="28" y="98" width="72" height="8" rx="4" fill="url(#trayGrad)"/>
+</svg>

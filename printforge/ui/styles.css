@@ -1,0 +1,179 @@
+/* PrintForge — application-specific styles.
+ * Everything else (header bars, sidebar, rows, buttons) comes from Libadwaita.
+ */
+
+/* ── Drop Zone (Empty State) ──────────────────────────────────────── */
+
+.drop-zone {
+    padding: 32px;
+    margin: 12px;
+    border-radius: 12px;
+    border: 2px dashed alpha(currentColor, 0.2);
+    transition: border-color 200ms ease, background 200ms ease;
+}
+
+.drop-zone:hover,
+.drop-zone.drag-hover {
+    border-color: @accent_color;
+    background: alpha(@accent_bg_color, 0.08);
+}
+
+.drop-zone.drag-hover {
+    border-style: solid;
+}
+
+.drop-zone-icon {
+    opacity: 0.4;
+    margin-bottom: 8px;
+}
+
+.drop-zone:hover .drop-zone-icon,
+.drop-zone.drag-hover .drop-zone-icon {
+    opacity: 1;
+    color: @accent_color;
+}
+
+.drop-zone-primary {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.drop-zone-secondary {
+    opacity: 0.6;
+}
+
+.drop-zone-formats {
+    font-size: 11px;
+    opacity: 0.45;
+    margin-top: 8px;
+}
+
+/* ── File List ────────────────────────────────────────────────────── */
+
+.file-list-container.drag-hover {
+    background: alpha(@accent_bg_color, 0.05);
+}
+
+.file-list-populated {
+    padding: 0 12px 12px 12px;
+}
+
+.file-list-header {
+    padding: 8px 0 8px 4px;
+}
+
+.file-item {
+    padding: 6px 4px;
+}
+
+.file-item-name {
+    font-weight: 600;
+}
+
+.file-item-details {
+    font-size: 11px;
+    opacity: 0.6;
+}
+
+.file-item-icon {
+    opacity: 0.7;
+}
+
+.file-item-remove {
+    opacity: 0;
+    transition: opacity 150ms ease;
+}
+
+.file-item:hover .file-item-remove,
+.file-item-remove:focus-visible {
+    opacity: 0.6;
+}
+
+.file-item-remove:hover {
+    opacity: 1;
+    color: @destructive_color;
+}
+
+/* ── Preview ──────────────────────────────────────────────────────── */
+
+.preview-info-bar {
+    padding: 6px 12px;
+}
+
+.preview-toolbar {
+    padding: 6px 12px;
+    border-top: 1px solid alpha(currentColor, 0.1);
+}
+
+.preview-page-label {
+    font-size: 12px;
+    font-weight: 600;
+    min-width: 80px;
+}
+
+.preview-zoom-label {
+    font-size: 11px;
+    min-width: 48px;
+    opacity: 0.7;
+}
+
+.preview-paper-label {
+    font-size: 11px;
+    opacity: 0.55;
+}
+
+/* ── Summary Bar ──────────────────────────────────────────────────── */
+
+.summary-bar {
+    padding: 8px 12px;
+}
+
+/* ── Position Grid ────────────────────────────────────────────────── */
+
+.position-button {
+    min-width: 30px;
+    min-height: 28px;
+    padding: 0;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+/* ── Dialogs ──────────────────────────────────────────────────────── */
+
+.print-success-icon {
+    color: @success_color;
+}
+
+.print-error-icon {
+    color: @destructive_color;
+}
+
+.error-details {
+    font-family: monospace;
+    font-size: 12px;
+    padding: 12px;
+    border-radius: 8px;
+    background: alpha(currentColor, 0.05);
+}
+
+/* ── Print Queue ──────────────────────────────────────────────────── */
+
+.queue-job-status {
+    font-size: 11px;
+    opacity: 0.7;
+}
+
+.queue-job-status.processing {
+    color: @accent_color;
+    opacity: 1;
+}
+
+.queue-job-status.completed {
+    color: @success_color;
+    opacity: 1;
+}
+
+.queue-job-status.failed {
+    color: @destructive_color;
+    opacity: 1;
+}
