@@ -13,3 +13,23 @@ venv/
 
 # Design assets are kept out of the repository
 /Design/
+
+# --- Secrets and credentials: never commit (standard block, keep in every repo) ---
+.env
+.env.*
+!.env.example
+!.env.*.example
+*[Ss]ecrets*.txt
+*.pem
+*.key
+*.p12
+*.pfx
+*.jks
+*.keystore
+id_rsa*
+id_ed25519*
+rclone.conf
+.git-credentials
+.netrc
+.npmrc
+# --- end secrets block ---
