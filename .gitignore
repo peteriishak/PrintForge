@@ -10,3 +10,6 @@ venv/
 .env.*
 !.env.example
 *.rpm
+
+# Design assets are kept out of the repository
+/Design/
