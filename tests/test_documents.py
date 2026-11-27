@@ -274,3 +274,35 @@ class TestPdfDocument:
             pytest.skip("Poppler not available")
         surface = doc.render_page(99, 595, 842)
         assert surface is None
+
+
+def _rsvg_available() -> bool:
+    try:
+        import gi
+        gi.require_version("Rsvg", "2.0")
+        from gi.repository import Rsvg  # noqa: F401
+        return True
+    except (ImportError, ValueError):
+        return False
+
+
+@pytest.mark.skipif(not _rsvg_available(), reason="librsvg not available")
+class TestSvgDocument:
+    @pytest.fixture
+    def sample_svg_file(self, tmp_dir):
+        path = os.path.join(tmp_dir, "sample.svg")
+        with open(path, "w") as f:
+            f.write('<svg xmlns="http://www.w3.org/2000/svg" width="200" height="100">'
+                    '<rect width="200" height="100" fill="teal"/></svg>')
+        return path
+
+    def test_load_uses_intrinsic_size(self, sample_svg_file):
+        doc = DocumentFactory.create(sample_svg_file)
+        assert doc is not None and doc.is_valid
+        assert doc.page_count == 1
+        assert doc.dimensions == (200.0, 100.0)
+
+    def test_render(self, sample_svg_file):
+        doc = DocumentFactory.create(sample_svg_file)
+        assert doc is not None
+        assert doc.render_page(0, 595, 842) is not None

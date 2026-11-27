@@ -3,14 +3,13 @@
 from __future__ import annotations
 
 import logging
-from typing import Optional
 
 import gi
 gi.require_version("Gtk", "4.0")
 gi.require_version("Adw", "1")
-from gi.repository import Gtk, GObject, Adw, GLib, Gio
+from gi.repository import Gtk, GObject, Adw
 
-from printforge import __version__, __app_name__, __app_id__
+from printforge import __version__, __app_name__
 from printforge.printing.job import PrintJobInfo, JobState
 
 log = logging.getLogger(__name__)
@@ -195,15 +194,15 @@ def show_about_dialog(parent: Gtk.Window) -> None:
         application_name=__app_name__,
         application_icon="printer-symbolic",
         version=__version__,
-        developer_name="PrintForge Contributors",
+        developer_name="Peter Habib",
         license_type=Gtk.License.GPL_3_0,
         comments="A modern, polished printing application for Fedora Linux.\n\n"
                  "Easily print images and documents with full control over "
                  "layout, scaling, margins, and quality.",
-        website="https://github.com/printforge/printforge",
-        issue_url="https://github.com/printforge/printforge/issues",
-        developers=["PrintForge Contributors"],
-        copyright="© 2024–2025 PrintForge Contributors",
+        website="https://github.com/peteriishak/PrintForge",
+        issue_url="https://github.com/peteriishak/PrintForge/issues",
+        developers=["Peter Habib https://github.com/peteriishak"],
+        copyright="© 2026 Peter Habib",
     )
     about.present(parent)
 

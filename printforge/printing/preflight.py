@@ -15,7 +15,6 @@ from printforge.documents.base import Document
 from printforge.printing.capabilities import PrinterCapabilities
 from printforge.printing.printer import PrinterInfo, PrinterState
 from printforge.utils.formatting import parse_page_range
-from printforge.utils.units import mm_to_in
 
 
 class Severity(Enum):

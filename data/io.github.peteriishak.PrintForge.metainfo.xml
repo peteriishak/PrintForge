@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component type="desktop-application">
-  <id>io.github.printforge</id>
+  <id>io.github.peteriishak.PrintForge</id>
   <name>PrintForge</name>
   <summary>Modern printing application for Linux</summary>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>GPL-3.0-or-later</project_license>
-  <developer id="io.github.printforge">
-    <name>PrintForge Contributors</name>
+  <developer id="io.github.peteriishak">
+    <name>Peter Habib</name>
   </developer>
 
   <description>
@@ -21,16 +21,28 @@
       <li>Live preview showing exactly how your document will print</li>
       <li>Full control: paper size, margins, scaling, position, quality</li>
       <li>CUPS integration with automatic printer discovery</li>
-      <li>Support for images (PNG, JPEG, WebP, BMP, TIFF, SVG), PDFs, and text</li>
+      <li>Support for images (PNG, JPEG, WebP, BMP, TIFF, SVG), PDF, PostScript, office documents, text, Markdown and source code</li>
       <li>Save and load print configuration presets</li>
       <li>Command-line interface for scripted printing</li>
     </ul>
   </description>
 
-  <launchable type="desktop-id">io.github.printforge.desktop</launchable>
+  <launchable type="desktop-id">io.github.peteriishak.PrintForge.desktop</launchable>
 
-  <url type="homepage">https://github.com/printforge/printforge</url>
-  <url type="bugtracker">https://github.com/printforge/printforge/issues</url>
+  <url type="homepage">https://github.com/peteriishak/PrintForge</url>
+  <url type="bugtracker">https://github.com/peteriishak/PrintForge/issues</url>
+  <url type="vcs-browser">https://github.com/peteriishak/PrintForge</url>
+
+  <screenshots>
+    <screenshot type="default">
+      <caption>Print queue with live preview and print settings</caption>
+      <image>https://raw.githubusercontent.com/peteriishak/PrintForge/main/docs/screenshots/main-window.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Image layout preview</caption>
+      <image>https://raw.githubusercontent.com/peteriishak/PrintForge/main/docs/screenshots/image-preview.png</image>
+    </screenshot>
+  </screenshots>
 
   <content_rating type="oars-1.1" />
 
@@ -49,7 +61,7 @@
   </recommends>
 
   <releases>
-    <release version="1.0.0" date="2025-01-01">
+    <release version="1.0.0" date="2026-11-27">
       <description>
         <p>Initial release of PrintForge.</p>
       </description>

@@ -4,13 +4,9 @@ from __future__ import annotations
 
 import logging
 import time
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 from enum import Enum
-from typing import Optional, TYPE_CHECKING
-
-if TYPE_CHECKING:
-    from printforge.printing.cups_backend import CupsBackend
-    from printforge.printing.mock_backend import MockBackend
+from typing import Optional
 
 log = logging.getLogger(__name__)
 

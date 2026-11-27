@@ -11,7 +11,6 @@ import time
 import uuid
 from dataclasses import dataclass, field, asdict
 from datetime import datetime
-from pathlib import Path
 from typing import Optional
 
 from printforge.config.settings import _config_dir

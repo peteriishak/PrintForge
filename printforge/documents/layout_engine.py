@@ -30,7 +30,6 @@ from printforge.config.print_settings import (
 )
 from printforge.utils.formatting import parse_page_range
 from printforge.utils.paper import get_paper_by_name, custom_paper, DEFAULT_PAPER, PaperSize
-from printforge.utils.units import mm_to_pt, mm_to_px
 
 
 @dataclass

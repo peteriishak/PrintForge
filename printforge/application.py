@@ -3,16 +3,14 @@
 from __future__ import annotations
 
 import logging
-import os
-import sys
 from pathlib import Path
 
 import gi
 gi.require_version("Gtk", "4.0")
 gi.require_version("Adw", "1")
-from gi.repository import Gtk, Gdk, Gio, Adw, GLib
+from gi.repository import Gtk, Gdk, Gio, Adw
 
-from printforge import __app_id__, __app_name__, __version__
+from printforge import __app_id__
 
 log = logging.getLogger(__name__)
 

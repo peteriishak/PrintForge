@@ -10,7 +10,7 @@ readme = "README.md"
 license = {text = "GPL-3.0-or-later"}
 requires-python = ">=3.10"
 authors = [
-    {name = "PrintForge Contributors"}
+    {name = "Peter Habib"}
 ]
 keywords = ["printing", "cups", "gtk4", "libadwaita", "fedora", "linux"]
 classifiers = [
@@ -34,6 +34,9 @@ dependencies = [
 ]
 
 [project.optional-dependencies]
+highlight = [
+    "Pygments>=2.0",
+]
 dev = [
     "pytest>=7.0",
     "pytest-cov>=4.0",
@@ -43,12 +46,15 @@ dev = [
 printforge = "printforge.__main__:main"
 
 [project.urls]
-Homepage = "https://github.com/printforge/printforge"
-Repository = "https://github.com/printforge/printforge"
-"Bug Tracker" = "https://github.com/printforge/printforge/issues"
+Homepage = "https://github.com/peteriishak/PrintForge"
+Repository = "https://github.com/peteriishak/PrintForge"
+"Bug Tracker" = "https://github.com/peteriishak/PrintForge/issues"
 
 [tool.setuptools.packages.find]
 include = ["printforge*"]
+
+[tool.setuptools.package-data]
+printforge = ["ui/*.css"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

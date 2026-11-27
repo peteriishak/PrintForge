@@ -4,7 +4,6 @@ from __future__ import annotations
 
 import logging
 import os
-import re
 from typing import Optional
 
 import cairo
@@ -186,7 +185,6 @@ class TextDocument(Document):
         try:
             import pygments
             from pygments.lexers import get_lexer_for_filename, TextLexer
-            from pygments.token import Token
 
             try:
                 lexer = get_lexer_for_filename(self._filepath, self._raw_text)

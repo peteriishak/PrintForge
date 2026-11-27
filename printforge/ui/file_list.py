@@ -494,7 +494,7 @@ class FileListWidget(Gtk.Box):
         """Show context menu for a file item."""
         menu = Gio.Menu()
         # For now, basic actions
-        menu.append("Remove", f"win.remove-file")
+        menu.append("Remove", "win.remove-file")
 
         popover = Gtk.PopoverMenu.new_from_model(menu)
         popover.set_parent(gesture.get_widget())

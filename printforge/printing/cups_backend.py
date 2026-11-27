@@ -8,7 +8,7 @@ import tempfile
 from typing import Callable, Optional
 
 from printforge.printing import maintenance, pjl
-from printforge.printing.pjl import get_device_name, resolve_user_id
+from printforge.printing.pjl import resolve_user_id
 from printforge.printing.ppd import PpdInfo, read_ppd
 from printforge.printing.printer import PrinterInfo, PrinterState, PrinterStatus, Severity, StatusIssue
 from printforge.printing.capabilities import PrinterCapabilities, parse_capabilities, parse_resolution_item

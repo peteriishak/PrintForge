@@ -1,15 +1,29 @@
+# Python
 __pycache__/
 *.py[cod]
 *.egg-info/
-.pytest_cache/
 build/
 dist/
 .venv/
 venv/
-.env
-.env.*
-!.env.example
+
+# Test and lint caches
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+
+# Packaging output
 *.rpm
+*.tar.gz
+
+# Editors and OS
+.vscode/
+.idea/
+*.swp
+*~
+.DS_Store
 
 # Design assets are kept out of the repository
 /Design/

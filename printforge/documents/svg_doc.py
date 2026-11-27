@@ -3,7 +3,6 @@
 from __future__ import annotations
 
 import logging
-from pathlib import Path
 from typing import Optional
 
 import cairo
@@ -34,31 +33,29 @@ class SvgDocument(Document):
         try:
             import gi
             gi.require_version("Rsvg", "2.0")
-            from gi.repository import Rsvg, GLib
+            from gi.repository import Rsvg
 
             self._handle = Rsvg.Handle.new_from_file(self._filepath)
 
-            # Get intrinsic dimensions
-            has_dims, width, height = False, 0.0, 0.0
+            # Intrinsic size: librsvg >= 2.52 returns (has_size, width, height)
+            sized = False
             try:
-                # Try the newer API first
-                has_w, w_length = self._handle.get_intrinsic_size_in_pixels()
-                if has_w:
-                    # get_intrinsic_size_in_pixels returns (bool, width, height)
-                    # but the signature varies by version
-                    pass
-            except (TypeError, AttributeError):
+                has_size, w, h = self._handle.get_intrinsic_size_in_pixels()
+                if has_size and w > 0 and h > 0:
+                    self._width, self._height = float(w), float(h)
+                    sized = True
+            except (TypeError, ValueError, AttributeError):
                 pass
 
-            # Fallback: use the deprecated but widely available get_dimensions
-            try:
-                dim = self._handle.get_dimensions()
-                self._width = float(dim.width) if dim.width > 0 else 100.0
-                self._height = float(dim.height) if dim.height > 0 else 100.0
-            except AttributeError:
-                # Very new librsvg without get_dimensions
-                self._width = 100.0
-                self._height = 100.0
+            # Fallback: the deprecated but widely available get_dimensions
+            if not sized:
+                try:
+                    dim = self._handle.get_dimensions()
+                    self._width = float(dim.width) if dim.width > 0 else 100.0
+                    self._height = float(dim.height) if dim.height > 0 else 100.0
+                except AttributeError:
+                    self._width = 100.0
+                    self._height = 100.0
 
             self._valid = True
             return True
@@ -105,7 +102,6 @@ class SvgDocument(Document):
             # Render SVG
             try:
                 # Try newer API: render_document
-                import gi
                 from gi.repository import Rsvg
                 viewport = Rsvg.Rectangle()
                 viewport.x = 0

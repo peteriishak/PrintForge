@@ -14,12 +14,10 @@ from typing import Optional
 import cairo
 
 from printforge.config.print_settings import (
-    PrintSettings, Orientation, ScalingMode, Position, ImageFit, PageRangeMode,
+    PrintSettings,
 )
 from printforge.documents.base import Document
 from printforge.documents.layout_engine import LayoutEngine
-from printforge.utils.paper import get_paper_by_name, DEFAULT_PAPER
-from printforge.utils.units import mm_to_pt
 
 log = logging.getLogger(__name__)
 

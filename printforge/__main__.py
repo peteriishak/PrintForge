@@ -201,7 +201,7 @@ def _cli_print(args: argparse.Namespace, files: list[str]) -> int:
 def _export_pdf(args: argparse.Namespace, files: list[str]) -> int:
     """Export files to print-ready PDF for verification."""
     from printforge.config.print_settings import (
-        PrintSettings, ColorMode, Orientation, DuplexMode, PrintQuality,
+        PrintSettings, ColorMode, Orientation,
     )
     from printforge.documents.base import DocumentFactory, is_supported
     from printforge.documents.print_prep import PrintPreparer

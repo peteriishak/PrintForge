@@ -10,7 +10,6 @@ Supports:
 from __future__ import annotations
 
 from dataclasses import dataclass
-from typing import Optional
 
 from printforge.documents.layout_engine import LayoutRect
 

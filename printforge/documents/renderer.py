@@ -13,11 +13,11 @@ from typing import Optional
 import cairo
 
 from printforge.config.print_settings import (
-    PrintSettings, ScalingMode, Position, Orientation, ImageFit, CropMode,
+    PrintSettings,
 )
 from printforge.documents.base import Document
-from printforge.documents.layout_engine import LayoutEngine, LayoutResult, NupLayout, PageCount
-from printforge.utils.paper import get_paper_by_name, DEFAULT_PAPER, PaperSize
+from printforge.documents.layout_engine import LayoutEngine, NupLayout, PageCount
+from printforge.utils.paper import PaperSize
 
 log = logging.getLogger(__name__)
 
